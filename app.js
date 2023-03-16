@@ -2,22 +2,19 @@ let screen = document.querySelector(".screen");
 let buttons = document.querySelectorAll(".btn");
 let clear = document.querySelector(".btn-clear");
 let equal = document.querySelector(".btn-equal");
-
 buttons.forEach(button => {
-    // when clicked individual button
+    // clicked event for each individual button
     button.addEventListener('click', (e) => {
-        let value = e.target.dataset.num; // store clicked value in value 
-        screen.value = screen.value + value;  // = value to screen value
-
+        let value = e.target.dataset.num; // store clicked button value in [value] 
+        screen.value = screen.value + value; // screen.value = value
     })
-});
+})
 
 equal.addEventListener('click', (e) => {
     if (screen.value === '') {
         screen.value == "";
     } else {
-        let answer = eval(screen.value);
-        screen.value = answer;
+        screen.value = eval(screen.value);
     }
 });
 
